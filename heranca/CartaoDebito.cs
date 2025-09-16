@@ -12,8 +12,26 @@ public class CartaoDebito
     public DateTime Vencimento { get; set; }
 
     public string Portador { get; set; }
-    
+
     public string Cvv { get; set; }
+
+    public bool Debitar(decimal valor)
+    {
+        if (valor > Saldo)
+            return false;
+
+        Saldo -= valor;
+        return false;
+    }
+
+    public bool Debitar(decimal valor, decimal usarLimite)
+    {
+        if (usarLimite)
+        {
+            if (valor <= (Saldo = Limite))
+                return Debitar/valor
+        })
+    }
 }
 
 public enum BandeiraCartao
